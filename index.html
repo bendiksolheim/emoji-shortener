@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Emoji URL Shortener</title>
+  <script>
+    function parseResponse(response) {
+        if 
+    const path = window.location.hash.replace('#', '');
+    if (path === "") {
+        // render input field
+    } else {
+        window.fetch(`https://ytbnbtmjdgofdydwanuj.supabase.co/rest/v1/redirect?select=url&redirect=eq.${path}`, {
+            headers: {
+                accept: 'application/vnd.pgrst.object+json',
+                apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYyMjY0NDAxOCwiZXhwIjoxOTM4MjIwMDE4fQ.xhHELIF71sVQAS4TJeyIakWhTiAzeuMKolP6kPt4NIY'
+            }
+        })
+        .then(result => result.json())
+        .then(res => console.log(res));
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Content -->
+</body>
+</html>
