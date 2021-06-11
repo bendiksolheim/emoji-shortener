@@ -30,9 +30,8 @@ function redirect(shortened) {
     .then(result => {
       if (result.ok) {
         return result.json()
-
       } else {
-        throw `${shortened} gave no results 🙀`
+        throw `${decodeURI(shortened)} gave no results 🙀`
       }
     }).then(res => {
       const redirectText = (n) => `Redirecting to ${res.url} in ${n} seconds`
@@ -43,6 +42,8 @@ function redirect(shortened) {
       }, 3000)
       setTimeout(() => showSuccess(redirectText(2)), 1000)
       setTimeout(() => showSuccess(redirectText(1)), 2000)
+    }).catch(e => {
+      showError(e)
     });
 }
 
