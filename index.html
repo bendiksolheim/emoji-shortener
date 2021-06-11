@@ -1,29 +1,48 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
+
   <title>Emoji URL Shortener</title>
-  <script>
-    function parseResponse(response) {
-        if 
-    const path = window.location.hash.replace('#', '');
-    if (path === "") {
-        // render input field
-    } else {
-        window.fetch(`https://ytbnbtmjdgofdydwanuj.supabase.co/rest/v1/redirect?select=url&redirect=eq.${path}`, {
-            headers: {
-                accept: 'application/vnd.pgrst.object+json',
-                apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYyMjY0NDAxOCwiZXhwIjoxOTM4MjIwMDE4fQ.xhHELIF71sVQAS4TJeyIakWhTiAzeuMKolP6kPt4NIY'
-            }
-        })
-        .then(result => result.json())
-        .then(res => console.log(res));
-    }
-  </script>
+  <style>
+   body {
+       padding: 0
+   }
+
+   html, body, .app {
+       height: 100%;
+       width: 100%;
+   }
+
+   .app {
+       align-items: center;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+   }
+
+   .info {
+       height: 25px;
+   }
+
+   .info--error {
+       color: red;
+   }
+  </style>
 </head>
 
 <body>
-  <!-- Content -->
+  <div id="app" class="app">
+    <div id="shorten-url" style="display: none">
+      <input type="url" id="shorten-url-input" placeholder="https://example.com" required />
+      <button id="shorten-url-button">Shorten!</button>
+    </div>
+    <div id="info" class="info">
+        <div id="info-text"></div>
+    </div>
+  </div>
+  <script src="index.js" type="text/javascript"></script>
 </body>
 </html>
